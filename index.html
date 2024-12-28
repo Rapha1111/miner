@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mining World</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- MetaMask Connection Section -->
+        <div id="connect-section">
+            <h1>Mining World</h1>
+            <button id="connect-wallet">Connect Wallet</button>
+        </div>
+
+        <!-- Game Section -->
+        <div id="game-section" style="display: none;">
+            <!-- Wallet Balance -->
+            <div id="wallet-balance">
+                <span>Your Balance: </span>
+                <strong id="crypto-balance">0</strong>
+                <span>Gold</span>
+                <button type="button" onclick="updateBalance()">update</button>
+            </div>
+
+            <!-- Mine Display -->
+            <div id="mine-container">
+                <h2>Mine</h2>
+                <div id="mine">
+                    <p id="mine-details">Gold: <span id="current-gold">0</span> / <span id="max-gold">500</span></p>
+                </div>
+                <button id="manage-mine" onclick="extract()">Extract</button>
+            </div>
+
+            <!-- Bottom Menu -->
+            <div id="menu">
+                <button id="manage-mine" onclick="upgradeMine()">Upgrade Mine</button>
+                <div id="mine-center"></div>
+                <button id="mint_miner" onclick="mintminer()">Mint New Miners</button>
+                <button id="manage-miners" onclick="minergestion()">Manage Miners</button>
+            </div>
+
+        </div>
+        <div id="minergestion" style="display: none;">
+        
+            <button id="mint_miner" onclick="back()"><- Back</button>
+            <button id="mint_miner" onclick="mintminer()">Mint New Miners</button>
+            <p>Your miners :</p>
+            <span id="miners-data"></span>
+            
+    
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
