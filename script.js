@@ -8,7 +8,7 @@ const maxgold = document.getElementById("max-gold");
 let userAddress = "";
 let contract; // Will hold the smart contract instance
 
-const CONTRACT_ADDRESS = "0x3bB1BFCC876Cad8f8F185074b9A3fDAA31470B60";
+const CONTRACT_ADDRESS = "0xB25762Af97e2Bc69324f559dBc8Ac9572fFE4CdC";
 const SEPOLIA_CHAIN_ID = "0xAA36A7"; // Hexadecimal for 11155111
 
 // Check if MetaMask is available
@@ -152,10 +152,10 @@ async function hasgootenfreeeminer(){
     }
 }
 async function mintminer(){
-    if (parseInt(cryptoBalance.innerHTML)>=1500){
+    if (parseInt(cryptoBalance.innerHTML)>=10000){
         contract.mintMiner().then(()=>{updateBalance()});
     } else {
-        alert("Il vous faut 1500 gold pour cela")
+        alert("Il vous faut 10000 gold pour cela")
     }
 }
 
@@ -187,10 +187,10 @@ async function mineradd(i){
 }
 
 function levelup(id, lvl){
-    if (parseInt(cryptoBalance.innerHTML)>=(lvl*200)){
+    if (parseInt(cryptoBalance.innerHTML)>=(lvl**2 *200)){
         contract.levelupMiner(id)
     } else {
-        alert("Il vous faut "+lvl*200+" gold pour cela")
+        alert("Il vous faut "+lvl**2 *200+" gold pour cela")
     }   
 }
 
